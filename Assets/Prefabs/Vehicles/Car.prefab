@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1964623596814942036}
   - component: {fileID: 1964623596814942034}
   - component: {fileID: 1964623596814942037}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 1964623596906659170}
   - component: {fileID: 1964623596906659168}
   - component: {fileID: 1964623596906659171}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 1964623597334576833}
   - component: {fileID: 1964623597334576863}
   - component: {fileID: 1964623597334576862}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 1964623597379565256}
   - component: {fileID: 1964623597379565259}
   - component: {fileID: 3086104539976354534}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2670,7 +2670,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!1 &1964623598112990675
@@ -2684,7 +2684,7 @@ GameObject:
   - component: {fileID: 1964623598112990672}
   - component: {fileID: 1964623598112990702}
   - component: {fileID: 1964623598112990673}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2759,7 +2759,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1964623598346746656}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}

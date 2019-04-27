@@ -111,6 +111,7 @@ Transform:
   m_Children:
   - {fileID: 9142566676164138215}
   - {fileID: 5743742977357796610}
+  - {fileID: 5891404865767680780}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -128,8 +129,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
-  m_CollisionDetection: 0
+  m_Constraints: 112
+  m_CollisionDetection: 1
 --- !u!136 &5691221271555149832
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -156,8 +157,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f8bf50ba58879498062330e1b91a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RunSpeed: 4
+  RunSpeed: 3
   mainCamera: {fileID: 0}
+  JumpForce: 20
+  GroundLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  GroundChecker: {fileID: 5891404865767680780}
+  GroundCheckerRadius: 0.01
+--- !u!1 &6629604838478335045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5891404865767680780}
+  m_Layer: 0
+  m_Name: GroundChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5891404865767680780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6629604838478335045}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5691221271555149835}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5743742977357402002
 PrefabInstance:
   m_ObjectHideFlags: 0
