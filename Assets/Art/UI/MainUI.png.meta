@@ -44,6 +44,7 @@ TextureImporter:
     21300078: Inventory_3
     21300080: Inventory_4
     21300082: Inventory_5
+    21300084: Map_Mask
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -961,6 +962,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 21f9bdd6535bd2b4e8c7f7cf79eadb7e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map_Mask
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 61
+        width: 546
+        height: 548
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82f91ba67d87d4a469723877edba0aff
       vertices: []
       indices: 
       edges: []
