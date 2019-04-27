@@ -3,6 +3,10 @@ guid: 23f27cbd17c3e114aa190d6b2b910d8b
 TextureImporter:
   fileIDToRecycleName:
     21300000: Marker_Player
+    21300002: Marker_Blood
+    21300004: Marker_Upgrade
+    21300006: Marker_Plasma
+    21300008: Marker_Shop
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -99,7 +103,87 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bad6ea58e94ed4b43878b012587d979d
+      spriteID: d7f57a52fe2ddcb4cb98b05496e45efc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marker_Blood
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 1319
+        width: 538
+        height: 731
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb94bb0cca09fb4faba5ea9787e0013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marker_Upgrade
+      rect:
+        serializedVersion: 2
+        x: 2510
+        y: 1293
+        width: 832
+        height: 782
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18419a17fb0344248aa03af804e5107c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marker_Plasma
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 488
+        width: 541
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67ea0653ad173a24b82e9c3078ea75ea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marker_Shop
+      rect:
+        serializedVersion: 2
+        x: 2639
+        y: 441
+        width: 859
+        height: 672
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e49c00ccf9b2d9488e14200f9b43ce0
       vertices: []
       indices: 
       edges: []

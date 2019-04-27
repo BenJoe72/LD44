@@ -7,6 +7,7 @@ using UnityEngine;
 public class MovementScript : MonoBehaviour
 {
     public float RunSpeed = 2f;
+    public float SprintSpeed = 2f;
     public Camera mainCamera;
     public float JumpForce;
     [Header("Ground Check")]
@@ -19,6 +20,7 @@ public class MovementScript : MonoBehaviour
     private Animator _animator;
     private Rigidbody _rigidbody;
     private bool _jump;
+    private bool _sprinting;
 
     private void Start()
     {        
@@ -44,6 +46,7 @@ public class MovementScript : MonoBehaviour
     private void GetMovementInput()
     {
         _movementVector = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        _sprinting = Input.GetButton("Sprint");
         var canJump = CanJump();
         _jump = !_jump && Input.GetButtonDown("Jump") && canJump;
         _animator.SetBool("OnGround", canJump);
@@ -59,7 +62,7 @@ public class MovementScript : MonoBehaviour
         var forward = mainCamera.transform.TransformDirection(_movementVector.normalized);
         forward = new Vector3(forward.x, 0, forward.z);
         _mousePosition = transform.position + forward;
-        _rigidbody.MovePosition(transform.position + forward * (RunSpeed) / 10f);
+        _rigidbody.MovePosition(transform.position + forward * (_sprinting ? SprintSpeed : RunSpeed) / 10f);
         if (_jump)
         {
             _rigidbody.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);

@@ -26,6 +26,10 @@ public class InteractScript : MonoBehaviour
         {
             Debug.Log("You are standing on the shopplace!");
         }
+        else if (other.tag.Equals("UpgradePlace"))
+        {
+            Debug.Log("You are standing on the upgradeplace!");
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -41,6 +45,10 @@ public class InteractScript : MonoBehaviour
         else if (other.tag.Equals("ShopPlace"))
         {
             Debug.Log("Exited the shopplace!");
-        }k
+        }
+        else if (other.tag.Equals("UpgradePlace"))
+        {
+            Debug.Log("Exited the upgradeplace!");
+        }
     }
 }

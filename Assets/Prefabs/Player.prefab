@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RunSpeed: 3
+  SprintSpeed: 5
   mainCamera: {fileID: 0}
   JumpForce: 20
   GroundLayer:
