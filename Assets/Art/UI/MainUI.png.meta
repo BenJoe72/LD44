@@ -45,6 +45,11 @@ TextureImporter:
     21300080: Inventory_4
     21300082: Inventory_5
     21300084: Map_Mask
+    21300086: Burger
+    21300088: Drink
+    21300090: Bar
+    21300092: Salad
+    21300094: Box
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -975,13 +980,113 @@ TextureImporter:
         width: 546
         height: 548
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 82f91ba67d87d4a469723877edba0aff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Burger
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 908
+        width: 520
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5807f9ba091c59438af3a689dbfd702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drink
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 880
+        width: 520
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7af40c507dbb294408786521de5a019a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bar
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 895
+        width: 520
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e61deb3691d814a9dfe520be6fd8ab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Salad
+      rect:
+        serializedVersion: 2
+        x: 2106
+        y: 888
+        width: 520
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e4cee019860c4849b51bb1620f1b626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Box
+      rect:
+        serializedVersion: 2
+        x: 2690
+        y: 887
+        width: 520
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183fb9b0e811aec4982db580b32d3678
       vertices: []
       indices: 
       edges: []

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerDataScript : MonoBehaviour
@@ -41,7 +42,9 @@ public class PlayerDataScript : MonoBehaviour
         get { return _savedPpl; }
         set
         {
+            int diff = value - _savedPpl;
             _savedPpl = value;
+            SavedPplScript.AddSavedPpl(diff);
             SavedPplScript.SetSavedPpl(_savedPpl);
         }
     }
@@ -57,6 +60,18 @@ public class PlayerDataScript : MonoBehaviour
             string third = _bloodType.Length > 2 ? _bloodType[2].ToString() : null;
             LifeBarsScript.SetBloodTypeLetters(first, second, third);
         }
+    }
+
+    public void SetFood(int foodNumber)
+    {
+        Food[foodNumber] = true;
+        InventoryScript.SetInventoryIcon(foodNumber);
+    }
+
+    public void ResetFood(int foodNumber)
+    {
+        Food[foodNumber] = false;
+        InventoryScript.ResetInventoryIcon(foodNumber);
     }
 
     public bool[] Food

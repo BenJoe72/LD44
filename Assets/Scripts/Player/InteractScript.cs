@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using UnityEngine;
 
 public class InteractScript : MonoBehaviour
@@ -11,7 +13,6 @@ public class InteractScript : MonoBehaviour
     public float[] UpgradePrices;
     public float PricePerPlasma;
     private int _currentUpgrade;
-    private int _currentFoodSpace;
     private string[] _upgrades = new string[]{
         "AB+",
         "A+",
@@ -22,13 +23,12 @@ public class InteractScript : MonoBehaviour
     private void Start()
     {
         _currentUpgrade = 0;
-        _currentFoodSpace = 0;
 
-        _playerdataScript.Blood = _playerdataScript.MaxBlood;
-        _playerdataScript.Plasma = _playerdataScript.MaxPlasma;
-        _playerdataScript.SavedPpl = 0;
-        _playerdataScript.Money = 0f;
-        _playerdataScript.BloodType = _upgrades[_currentUpgrade];
+        PlayerDataScript.Blood = PlayerDataScript.MaxBlood;
+        PlayerDataScript.Plasma = PlayerDataScript.MaxPlasma;
+        PlayerDataScript.SavedPpl = 0;
+        PlayerDataScript.Money = 0f;
+        PlayerDataScript.BloodType = _upgrades[_currentUpgrade];
     }
 
     private PlayerDataScript _playerdataScript;
@@ -48,38 +48,49 @@ public class InteractScript : MonoBehaviour
         {
             if (_onBloodPlace)
             {
-                if (_playerdataScript.Blood >= _playerdataScript.MaxBlood / 10f)
+                if (PlayerDataScript.Blood >= PlayerDataScript.MaxBlood / 10f)
                 {
-                    _playerdataScript.Blood -= _playerdataScript.MaxBlood / 10f;
-                    _playerdataScript.Plasma = Mathf.Max(_playerdataScript.Plasma - _playerdataScript.MaxPlasma / 10f, 0f);
-                    _playerdataScript.SavedPpl += Random.Range((int)0, (int)3);
+                    PlayerDataScript.Blood -= PlayerDataScript.MaxBlood / 10f;
+                    PlayerDataScript.Plasma = Mathf.Max(PlayerDataScript.Plasma - PlayerDataScript.MaxPlasma / 10f, 0f);
+                    PlayerDataScript.SavedPpl += UnityEngine.Random.Range((int)1, (int)4);
                 }
             }
             if (_onPlasmaPlace)
             {
-                _playerdataScript.Money += PricePerPlasma * _playerdataScript.Plasma;
-                _playerdataScript.Plasma = 0f;
+                PlayerDataScript.Money += PricePerPlasma * PlayerDataScript.Plasma;
+                PlayerDataScript.Plasma = 0f;
             }
             if (_onShopPlace)
             {
-                if (_playerdataScript.Money >= FoodPrice && _currentFoodSpace < 4)
+                if (PlayerDataScript.Money >= FoodPrice && PlayerDataScript.Food.Any(x => !x))
                 {
-                    _playerdataScript.Money -= FoodPrice;
-                    _playerdataScript.Food[_currentFoodSpace] = true;
-                    _currentFoodSpace++;
+                    int currentFoodSpace = Array.FindIndex(PlayerDataScript.Food, x => !x);
+                    PlayerDataScript.Money -= FoodPrice;
+                    PlayerDataScript.SetFood(currentFoodSpace);
+                    currentFoodSpace++;
                 }
             }
             if (_onUpgradePlace)
             {
                 // AB+ A+ 0+ 0-
-                if (_currentUpgrade < 3 && _playerdataScript.Money >= UpgradePrices[_currentUpgrade])
+                if (_currentUpgrade < 3 && PlayerDataScript.Money >= UpgradePrices[_currentUpgrade])
                 {
-                    _playerdataScript.Money -= UpgradePrices[_currentUpgrade];
+                    PlayerDataScript.Money -= UpgradePrices[_currentUpgrade];
                     _currentUpgrade++;
-
+                    PlayerDataScript.BloodType = _upgrades[_currentUpgrade];
                 }
             }
         }
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+            PlayerDataScript.ResetFood(0);
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+            PlayerDataScript.ResetFood(1);
+        if(Input.GetKeyDown(KeyCode.Alpha3))
+            PlayerDataScript.ResetFood(2);
+        if(Input.GetKeyDown(KeyCode.Alpha4))
+            PlayerDataScript.ResetFood(3);
+        if(Input.GetKeyDown(KeyCode.Alpha5))
+            PlayerDataScript.ResetFood(4);
     }
 
     private void OnTriggerEnter(Collider other)

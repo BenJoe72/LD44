@@ -91,6 +91,8 @@ GameObject:
   - component: {fileID: 5691221271555149833}
   - component: {fileID: 5691221271555149832}
   - component: {fileID: 7399454167762656144}
+  - component: {fileID: 5817727147085070105}
+  - component: {fileID: 484131429306903150}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -166,6 +168,41 @@ MonoBehaviour:
     m_Bits: 1024
   GroundChecker: {fileID: 5891404865767680780}
   GroundCheckerRadius: 0.01
+--- !u!114 &5817727147085070105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5691221271555149834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91fbb2ad3d17b84b83e80386aa45cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InventoryScript: {fileID: 0}
+  LifeBarsScript: {fileID: 0}
+  SavedPplScript: {fileID: 0}
+  MaxPlasma: 5000
+  MaxBlood: 100
+--- !u!114 &484131429306903150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5691221271555149834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1745f151593e94cb2431df673cae0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FoodPrice: 2
+  UpgradePrices:
+  - 10
+  - 25
+  - 50
+  PricePerPlasma: 1
 --- !u!1 &6629604838478335045
 GameObject:
   m_ObjectHideFlags: 0

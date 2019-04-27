@@ -11,11 +11,18 @@ public class Inventory : MonoBehaviour
     [Header("Numbers")]
     public Sprite[] MoneyNumbers;
     public Sprite DollarSign;
+    public Sprite[] FoodItems;
 
-    public void SetInventoryIcon(Sprite newSprite, int inventoryNumber)
+    public void SetInventoryIcon(int inventoryNumber)
     {
-        InventoryIcons[inventoryNumber].enabled = newSprite != null;
+        Sprite newSprite = FoodItems[UnityEngine.Random.Range(0, FoodItems.Length)];
+        InventoryIcons[inventoryNumber].enabled = true;
         InventoryIcons[inventoryNumber].sprite = newSprite;
+    }
+
+    public void ResetInventoryIcon(int inventoryNumber)
+    {
+        InventoryIcons[inventoryNumber].enabled = false;
     }
 
     public void SetMoney(float amount)
