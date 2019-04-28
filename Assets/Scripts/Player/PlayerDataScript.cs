@@ -6,6 +6,65 @@ public class PlayerDataScript : MonoBehaviour
     public Inventory InventoryScript;
     public LifeBars LifeBarsScript;
     public SavedPpl SavedPplScript;
+    public Timer TimerScript;
+
+    public float BloodPerFood;
+    public float PlasmaPerFood;
+    public float BloodRegenRate;
+    public float PlasmaRegenRate;
+    public float TimePerDonation;
+    public float MaxPlasma;
+    public float MaxBlood;
+    public float StartTimer;
+
+    private float nextRegen;
+    private float Timer;
+    private float _money;
+    private float _blood;
+    private float _plasma;
+    private int _savedPpl;
+    private string _bloodType;
+    private bool[] _food;
+
+    private void Start()
+    {
+        Timer = StartTimer;
+        UpdateTimer();
+    }
+
+    private void Update()
+    {
+        if (nextRegen < Time.time)
+        {
+            nextRegen = Time.time + 1;
+            if (Blood < MaxBlood)
+            {
+                Blood += BloodRegenRate;
+            }
+            if (Plasma < MaxPlasma)
+            {
+                Plasma += PlasmaRegenRate;
+            }
+        }
+
+        Timer -= Time.deltaTime;
+        UpdateTimer();
+        CheckIsAlive();
+    }
+
+    private void UpdateTimer()
+    {
+        int seconds = (int)(Timer % 60);
+        int minutes = (int)(Timer / 60f);
+        TimerScript.UpdateTimer(minutes.GetDigitAtPosition(2), minutes.GetDigitAtPosition(1), seconds.GetDigitAtPosition(2), seconds.GetDigitAtPosition(1));
+    }
+
+    private bool CheckIsAlive()
+    {
+        bool alive = Timer > 0f;
+        alive &= Blood > 0f;
+        return alive;
+    }
 
     public float Money
     {
@@ -22,7 +81,8 @@ public class PlayerDataScript : MonoBehaviour
         get { return _blood; }
         set
         {
-            _blood = value;
+            _blood = Math.Min(value, MaxBlood);
+            CheckIsAlive();
             LifeBarsScript.SetBloodPercent(_blood / MaxBlood);
         }
     }
@@ -32,7 +92,7 @@ public class PlayerDataScript : MonoBehaviour
         get { return _plasma; }
         set
         {
-            _plasma = value;
+            _plasma = Math.Min(value, MaxPlasma);
             LifeBarsScript.SetPlasmaPercent(_plasma / MaxPlasma);
         }
     }
@@ -44,6 +104,8 @@ public class PlayerDataScript : MonoBehaviour
         {
             int diff = value - _savedPpl;
             _savedPpl = value;
+            Timer += TimePerDonation;
+            UpdateTimer();
             SavedPplScript.AddSavedPpl(diff);
             SavedPplScript.SetSavedPpl(_savedPpl);
         }
@@ -68,8 +130,10 @@ public class PlayerDataScript : MonoBehaviour
         InventoryScript.SetInventoryIcon(foodNumber);
     }
 
-    public void ResetFood(int foodNumber)
+    public void UseFood(int foodNumber)
     {
+        Blood += BloodPerFood;
+        Plasma += PlasmaPerFood;
         Food[foodNumber] = false;
         InventoryScript.ResetInventoryIcon(foodNumber);
     }
@@ -87,14 +151,4 @@ public class PlayerDataScript : MonoBehaviour
             _food = value;
         }
     }
-
-    private float _money;
-    private float _blood;
-    private float _plasma;
-    private int _savedPpl;
-    private string _bloodType;
-    private bool[] _food;
-
-    public float MaxPlasma;
-    public float MaxBlood;
 }

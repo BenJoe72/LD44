@@ -183,8 +183,15 @@ MonoBehaviour:
   InventoryScript: {fileID: 0}
   LifeBarsScript: {fileID: 0}
   SavedPplScript: {fileID: 0}
-  MaxPlasma: 5000
-  MaxBlood: 100
+  TimerScript: {fileID: 0}
+  BloodPerFood: 100
+  PlasmaPerFood: 10
+  BloodRegenRate: 10
+  PlasmaRegenRate: 1
+  TimePerDonation: 60
+  MaxPlasma: 100
+  MaxBlood: 5000
+  StartTimer: 600
 --- !u!114 &484131429306903150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,9 +206,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FoodPrice: 2
   UpgradePrices:
-  - 10
-  - 25
   - 50
+  - 100
+  - 500
   PricePerPlasma: 1
 --- !u!1 &6629604838478335045
 GameObject:

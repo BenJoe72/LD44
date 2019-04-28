@@ -81,16 +81,16 @@ public class InteractScript : MonoBehaviour
                 }
             }
         }
-        if(Input.GetKeyDown(KeyCode.Alpha1))
-            PlayerDataScript.ResetFood(0);
-        if(Input.GetKeyDown(KeyCode.Alpha2))
-            PlayerDataScript.ResetFood(1);
-        if(Input.GetKeyDown(KeyCode.Alpha3))
-            PlayerDataScript.ResetFood(2);
-        if(Input.GetKeyDown(KeyCode.Alpha4))
-            PlayerDataScript.ResetFood(3);
-        if(Input.GetKeyDown(KeyCode.Alpha5))
-            PlayerDataScript.ResetFood(4);
+        if(Input.GetKeyDown(KeyCode.Alpha1) && PlayerDataScript.Food[0])
+            PlayerDataScript.UseFood(0);
+        if(Input.GetKeyDown(KeyCode.Alpha2) && PlayerDataScript.Food[1])
+            PlayerDataScript.UseFood(1);
+        if(Input.GetKeyDown(KeyCode.Alpha3) && PlayerDataScript.Food[2])
+            PlayerDataScript.UseFood(2);
+        if(Input.GetKeyDown(KeyCode.Alpha4) && PlayerDataScript.Food[3])
+            PlayerDataScript.UseFood(3);
+        if(Input.GetKeyDown(KeyCode.Alpha5) && PlayerDataScript.Food[4])
+            PlayerDataScript.UseFood(4);
     }
 
     private void OnTriggerEnter(Collider other)
